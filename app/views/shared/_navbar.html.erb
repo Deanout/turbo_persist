@@ -1,0 +1,16 @@
+<%= turbo_frame_tag "navbar" do %>
+  <nav>
+    <ul>
+      <li><%= link_to 'Home', root_path, data: { turbo_frame: "_top" } %></li>
+      <li><%= link_to 'About', about_path, data: { turbo_frame: "_top" } %></li>
+      <li><%= link_to 'Contact', contact_path, data: { turbo_frame: "_top" } %></li>
+    </ul>
+    <%= form_with url: "#", 
+        method: :get, 
+        id: "navbar-form", 
+        data: { turbo_permanent: true } do |f| %>
+      <%= f.text_field :query %>
+      <%= f.submit "Search" %>
+    <% end %>
+  </nav>
+<% end %>
