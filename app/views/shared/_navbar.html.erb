@@ -7,9 +7,9 @@
     </ul>
     <%= form_with url: "#", 
         method: :get, 
-        id: "navbar-form", 
-        data: { turbo_permanent: true } do |f| %>
-      <%= f.text_field :query %>
+        id: "navbar-form" do |f| %>
+      <%= f.text_field :query, 
+        data: { turbo_permanent: true } %>
       <%= f.submit "Search" %>
     <% end %>
   </nav>
